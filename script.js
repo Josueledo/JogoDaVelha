@@ -91,3 +91,6 @@ function checkWin() {
         alert("2 Win")
     }
 }
+function restart(){
+    window.location.reload()
+}
