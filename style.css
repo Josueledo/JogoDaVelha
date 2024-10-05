@@ -6,6 +6,7 @@
 }
 :root{
     --primary: rgb(127, 95, 214);
+    --hidden: rgba(127, 95, 214, 0.589);
 }
 body{
     width: 100%;
