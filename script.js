@@ -9,7 +9,6 @@ let player1Turn = document.querySelector(".player1")
 let player2Turn = document.querySelector(".player2")
 
 function checkTurn(){
-    console.log(vez)
     if(vez === 1){
         player1Turn.classList.add("active")
         if(player2Turn.classList.contains("active")){
@@ -34,6 +33,12 @@ function select(e) {
                 removeItem(player1[0])
                 player1.shift()
             }
+            if(player1.length === 3){
+                console.log(player1)
+                player1[0].style.color = "rgba(127, 95, 214, 0.589)"
+                player1[1].style.color = "rgb(127, 95, 214)"
+                player1[2].style.color = "rgb(127, 95, 214)"
+            }
             checkWin()
             vez = 2
             checkTurn()
@@ -46,6 +51,12 @@ function select(e) {
             if(player2.length > 3){
                 removeItem(player2[0])
                 player2.shift()
+            }
+            if(player2.length === 3){
+                console.log(player2)
+                player2[0].style.color = "rgba(127, 95, 214, 0.589)"
+                 player2[1].style.color = "rgb(127, 95, 214)"
+                player2[2].style.color = "rgb(127, 95, 214)"
             }
             checkWin()
             vez = 1
@@ -68,7 +79,6 @@ function checkWin() {
     let btn8 = document.getElementById("btn8").children[0].innerHTML
     let btn9 = document.getElementById("btn9").children[0].innerHTML
 
-    console.log(btn1)
     if (btn1 === 'x' && btn2 === "x" && btn3 === "x" ||
         btn1 === 'x' && btn4 === "x" && btn7 === "x" ||
         btn1 === 'x' && btn5 === "x" && btn9 === "x" ||
